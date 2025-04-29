@@ -1,5 +1,5 @@
 function showSurprise() {
-    const surprise = document.getElementById("surprise");
-    surprise.classList.remove("hidden");
+    const surprise = document.getElementById('surprise');
+    surprise.classList.remove('hidden');
   }
   
