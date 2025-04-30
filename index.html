@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hola 🌸</title>
+  <title>Una invitación especial</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1 class="greeting">¡Hola, Esme! 💖</h1>
-    <p class="message">Espero que tengas un día tan hermoso como tú 🌞✨</p>
-    <button onclick="showSurprise()" class="btn">Desbloquear mensaje 💌</button>
-    <div id="surprise" class="hidden surprise">
-      🌷 ¡Eres una persona maravillosa y te deseo lo mejor hoy y siempre! 🌷
+    <div class="photo-frame">
+      <img src="img/lola.png" alt="Lola" class="profile-photo">
+      <div class="frame-decoration"></div>
     </div>
+    <h1 class="greeting">¡Hola, Lola! 💖</h1>
+    <p class="message">Espero que hayas tenido un hermoso día así como tú 🌷</p>
+    <button onclick="showInvitation()" class="btn">Descubre algo especial 💫</button>
   </div>
+
+  <canvas id="confetti"></canvas>
 
   <script src="js/script.js"></script>
 </body>
