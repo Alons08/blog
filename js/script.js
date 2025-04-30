@@ -1,9 +1,6 @@
-// script.js
 function showInvitation() {
-  // Crear efecto de confeti
   startConfetti();
   
-  // Mostrar mensaje romántico después de un breve retraso
   setTimeout(() => {
     createHearts();
     Swal.fire({
@@ -47,7 +44,6 @@ function showInvitation() {
   }, 1000);
 }
 
-// Configuración del confeti
 let confettiCanvas = document.getElementById('confetti');
 let confettiCtx = confettiCanvas.getContext('2d');
 let confettiParticles = [];
@@ -62,7 +58,6 @@ function startConfetti() {
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
   
-  // Crear partículas de confeti
   for (let i = 0; i < 150; i++) {
     confettiParticles.push({
       x: Math.random() * confettiCanvas.width,
@@ -110,7 +105,6 @@ function animateConfetti() {
   confettiAnimationId = requestAnimationFrame(animateConfetti);
 }
 
-// Crear corazones flotantes
 function createHearts() {
   const colors = ['#ff6b8b', '#ff8e9e', '#ffb3c1', '#ffd6e7', '#ff758c'];
   const container = document.body;
@@ -120,46 +114,21 @@ function createHearts() {
     heart.innerHTML = '❤️';
     heart.classList.add('heart');
     
-    // Posición aleatoria
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.top = Math.random() * 100 + 'vh';
     
-    // Tamaño aleatorio
     const size = Math.random() * 20 + 10;
     heart.style.fontSize = size + 'px';
     
-    // Color aleatorio
     heart.style.color = colors[Math.floor(Math.random() * colors.length)];
     
-    // Animación única
     heart.style.animationDuration = Math.random() * 3 + 2 + 's';
     heart.style.animationDelay = Math.random() * 2 + 's';
     
     container.appendChild(heart);
     
-    // Eliminar después de la animación
     setTimeout(() => {
       heart.remove();
     }, 4000);
   }
 }
-
-// Incluir SweetAlert2 para mensajes bonitos
-const script = document.createElement('script');
-script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
-document.head.appendChild(script);
-
-// Estilo adicional para SweetAlert
-const style = document.createElement('style');
-style.textContent = `
-  .swal2-popup {
-    border-radius: 20px !important;
-    border: 2px solid #ffb3c1 !important;
-  }
-  .swal2-title {
-    font-family: 'Dancing Script', cursive !important;
-    color: #e84393 !important;
-    font-size: 2em !important;
-  }
-`;
-document.head.appendChild(style);
