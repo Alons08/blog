@@ -135,6 +135,7 @@ canvas {
   100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
 
+/* Estilos para SweetAlert sin GIF */
 .swal2-popup {
   border-radius: 20px !important;
   border: 2px solid #ffb3c1 !important;
@@ -144,4 +145,8 @@ canvas {
   font-family: 'Dancing Script', cursive !important;
   color: #e84393 !important;
   font-size: 2em !important;
+}
+
+.swal2-container.swal2-backdrop-show {
+  background: rgba(255, 182, 193, 0.3) !important;
 }
