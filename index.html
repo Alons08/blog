@@ -13,15 +13,17 @@
       <img src="img/lola2.png" alt="Lola" class="profile-photo">
       <div class="frame-decoration"></div>
     </div>
-    <h1 class="greeting">¡Hola, mi bella Lola! 💖</h1>
+    <h1 class="greeting">¡Hola, Lola bonita! 💖</h1>
     <p class="message">Espero que hayas tenido un hermoso día así como tú 🌷</p>
     <button onclick="showInvitation()" class="btn">Descubre algo especial 💫</button>
   </div>
 
-  <!-- Elemento de audio oculto -->
+  <!-- Widget de SoundCloud (oculto) -->
+  <iframe id="soundcloudWidget" width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123456789&color=%23ff758c&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"></iframe>
+
+  <!-- Audio alternativo (oculto) -->
   <audio id="treasureSong" loop>
-    <source src="music/treasure.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
+    <source src="https://audio-example.com/treasure.mp3" type="audio/mpeg">
   </audio>
 
   <canvas id="confetti"></canvas>
