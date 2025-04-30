@@ -10,16 +10,24 @@
 <body>
   <div class="container">
     <div class="photo-frame">
-      <img src="img/lola.png" alt="Lola" class="profile-photo">
+      <img src="img/lola2.png" alt="Lola" class="profile-photo">
       <div class="frame-decoration"></div>
     </div>
-    <h1 class="greeting">¡Hola, Lola! 💖</h1>
+    <h1 class="greeting">¡Hola, mi bella Lola! 💖</h1>
     <p class="message">Espero que hayas tenido un hermoso día así como tú 🌷</p>
     <button onclick="showInvitation()" class="btn">Descubre algo especial 💫</button>
   </div>
 
+  <!-- Elemento de audio oculto -->
+  <audio id="treasureSong" loop>
+    <source src="music/treasure.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
   <canvas id="confetti"></canvas>
 
+  <!-- SweetAlert JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

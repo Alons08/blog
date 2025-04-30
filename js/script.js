@@ -1,5 +1,13 @@
-// script.js
 function showInvitation() {
+  // Reproducir la canción Treasure
+  const song = document.getElementById('treasureSong');
+  song.volume = 0.7; // Volumen moderado
+  song.play().catch(e => console.log("Error al reproducir:", e));
+  
+  // Hacer que el título baile
+  const greeting = document.querySelector('.greeting');
+  greeting.classList.add('dancing');
+  
   // Crear efecto de confeti
   startConfetti();
   
@@ -8,8 +16,8 @@ function showInvitation() {
     createHearts();
     Swal.fire({
       title: '¿Me acompañarías al cine?',
-      html: '<div style="font-size: 1.2em; font-family: \'Dancing Script\', cursive;">Lola, me encantaría compartir una película contigo.<br>¿Qué tal este viernes por la tarde?<br>Prometo palomitas y buenos momentos 🍿❤️</div>',
-      imageUrl: 'img/lola.png',
+      html: '<div style="font-size: 1.2em; font-family: \'Dancing Script\', cursive;">Lola, me encantaría compartir una película contigo.<br>¿Qué tal este viernes por la tarde?<br>Prometo palomitas, buenos momentos y...<br><span style="color: #e84393; font-weight: 600;">¡mucha diversión como esta canción! 🎶</span></div>',
+      imageUrl: 'img/lola1.png',
       imageWidth: 200,
       imageHeight: 200,
       imageAlt: 'Lola',
@@ -29,18 +37,30 @@ function showInvitation() {
         popup: 'animated pulse'
       }
     }).then((result) => {
+      // Detener efectos cuando se cierra el diálogo
       stopConfetti();
+      song.pause();
+      greeting.classList.remove('dancing');
+      
       if (result.isConfirmed) {
         Swal.fire({
           title: '¡Perfecto! 💖',
           text: 'Estoy emocionado por nuestra cita de cine 🎬',
-          icon: 'success'
+          icon: 'success',
+          timer: 3000,
+          timerProgressBar: true,
+          willClose: () => {
+            song.pause();
+          }
         });
       } else {
         Swal.fire({
           title: 'Entendido 😊',
           text: 'Seguiré intentándolo hasta que digas que sí',
-          icon: 'info'
+          icon: 'info',
+          willClose: () => {
+            song.pause();
+          }
         });
       }
     });
@@ -144,22 +164,5 @@ function createHearts() {
   }
 }
 
-// Incluir SweetAlert2 para mensajes bonitos
-const script = document.createElement('script');
-script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
-document.head.appendChild(script);
-
-// Estilo adicional para SweetAlert
-const style = document.createElement('style');
-style.textContent = `
-  .swal2-popup {
-    border-radius: 20px !important;
-    border: 2px solid #ffb3c1 !important;
-  }
-  .swal2-title {
-    font-family: 'Dancing Script', cursive !important;
-    color: #e84393 !important;
-    font-size: 2em !important;
-  }
-`;
-document.head.appendChild(style);
+// Inicializar el canvas al cargar la página
+window.addEventListener('load', resizeCanvas);
