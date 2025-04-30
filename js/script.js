@@ -11,12 +11,7 @@ function showInvitation() {
       imageHeight: 200,
       imageAlt: 'Lola',
       background: 'rgba(255, 255, 255, 0.9)',
-      backdrop: `
-        rgba(255,182,193,0.4)
-        url("https://i.gifer.com/7IsZ.gif")
-        center top
-        no-repeat
-      `,
+      backdrop: `rgba(255,182,193,0.4)`,
       showConfirmButton: true,
       confirmButtonText: '¡Sí, me encantaría!',
       confirmButtonColor: '#ff758c',
