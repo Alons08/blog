@@ -5,7 +5,7 @@ function showInvitation() {
     createHearts();
     Swal.fire({
       title: '¿Me acompañarías al cine?',
-      html: '<div style="font-size: 1.2em; font-family: \'Dancing Script\', cursive;">Lola, me encantaría compartir una película contigo.<br>¿Qué tal este viernes por la tarde?<br>Prometo palomitas y buenos momentos 🍿❤️</div>',
+      html: '<div style="font-size: 1.2em; font-family: \'Dancing Script\', cursive;">Lola, me encantaría compartir una película contigo.<br>¿Qué tal este domingo por la tarde-noche?<br>Prometo palomitas y buenos momentos 🍿❤️</div>',
       imageUrl: 'img/lola1.png',
       imageWidth: 200,
       imageHeight: 200,
