@@ -1,119 +1,138 @@
-function showInvitation() {
-  startConfetti();
+document.addEventListener('DOMContentLoaded', function() {
+  // Menú mobile
+  const menuToggle = document.getElementById('menuToggle');
+  const navMobile = document.getElementById('navMobile');
   
-  setTimeout(() => {
-    createHearts();
-    Swal.fire({
-      title: '¿Me acompañarías al cine?',
-      html: '<div style="font-size: 1.2em; font-family: \'Dancing Script\', cursive;">Lola, me encantaría ir al cine contigo.<br>¿Qué tal este domingo por la tarde-noche?<br>Prometo palomitas y buenos momentos 🍿❤️</div>',
-      imageUrl: 'img/lola1.png',
-      imageWidth: 200,
-      imageHeight: 200,
-      imageAlt: 'Lola',
-      background: 'rgba(255, 255, 255, 0.96)',
-      showConfirmButton: true,
-      confirmButtonText: '¡Sí, me encantaría!',
-      confirmButtonColor: '#ff758c',
-      showCancelButton: true,
-      cancelButtonText: 'Tal vez otro día',
-      customClass: {
-        popup: 'animated pulse'
-      }
-    }).then((result) => {
-      stopConfetti();
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: '¡Perfecto! 💖',
-          text: 'Estoy emocionado por nuestra cita de cine 🎬',
-          icon: 'success'
-        });
-      } else {
-        Swal.fire({
-          title: 'Entendido 😊',
-          text: 'Seguiré intentándolo hasta que digas que sí',
-          icon: 'info'
-        });
-      }
-    });
-  }, 1000);
-}
-
-// Confetti
-let confettiCanvas = document.getElementById('confetti');
-let confettiCtx = confettiCanvas.getContext('2d');
-let confettiParticles = [];
-let confettiAnimationId;
-
-function resizeCanvas() {
-  confettiCanvas.width = window.innerWidth;
-  confettiCanvas.height = window.innerHeight;
-}
-
-function startConfetti() {
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-  
-  for (let i = 0; i < 150; i++) {
-    confettiParticles.push({
-      x: Math.random() * confettiCanvas.width,
-      y: Math.random() * confettiCanvas.height - confettiCanvas.height,
-      size: Math.random() * 10 + 5,
-      color: `hsl(${Math.random() * 60 + 330}, 100%, 50%)`,
-      speed: Math.random() * 3 + 2,
-      angle: Math.random() * 360,
-      rotation: Math.random() * 0.2 - 0.1
-    });
-  }
-  
-  animateConfetti();
-}
-
-function stopConfetti() {
-  cancelAnimationFrame(confettiAnimationId);
-  confettiParticles = [];
-  confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-  window.removeEventListener('resize', resizeCanvas);
-}
-
-function animateConfetti() {
-  confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-  
-  confettiParticles.forEach((p) => {
-    confettiCtx.save();
-    confettiCtx.translate(p.x, p.y);
-    confettiCtx.rotate(p.angle);
-    confettiCtx.fillStyle = p.color;
-    confettiCtx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
-    confettiCtx.restore();
-    
-    p.y += p.speed;
-    p.angle += p.rotation;
-    
-    if (p.y > confettiCanvas.height) {
-      p.y = -p.size;
-      p.x = Math.random() * confettiCanvas.width;
-    }
+  menuToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+      navMobile.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
   });
   
-  confettiAnimationId = requestAnimationFrame(animateConfetti);
-}
-
-// Corazones flotantes
-function createHearts() {
-  const colors = ['#ff6b8b', '#ff8e9e', '#ffb3c1', '#ffd6e7', '#ff758c'];
+  // Cerrar menú al hacer clic en un enlace
+  document.querySelectorAll('#navMobile a').forEach(link => {
+      link.addEventListener('click', function() {
+          menuToggle.classList.remove('active');
+          navMobile.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+      });
+  });
   
-  for (let i = 0; i < 30; i++) {
-    const heart = document.createElement('div');
-    heart.innerHTML = '❤️';
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.top = Math.random() * 100 + 'vh';
-    heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
-    heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-    heart.style.animationDelay = Math.random() * 2 + 's';
-    document.body.appendChild(heart);
-    
-    setTimeout(() => heart.remove(), 4000);
+  // Filtros del menú con scroll horizontal táctil
+  const menuTabs = document.getElementById('menuTabs');
+  let isDragging = false;
+  let startX, scrollLeft;
+  
+  menuTabs.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.pageX - menuTabs.offsetLeft;
+      scrollLeft = menuTabs.scrollLeft;
+  });
+  
+  menuTabs.addEventListener('mouseleave', () => {
+      isDragging = false;
+  });
+  
+  menuTabs.addEventListener('mouseup', () => {
+      isDragging = false;
+  });
+  
+  menuTabs.addEventListener('mousemove', (e) => {
+      if(!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - menuTabs.offsetLeft;
+      const walk = (x - startX) * 2;
+      menuTabs.scrollLeft = scrollLeft - walk;
+  });
+  
+  // Touch events para móviles
+  menuTabs.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      startX = e.touches[0].pageX - menuTabs.offsetLeft;
+      scrollLeft = menuTabs.scrollLeft;
+  });
+  
+  menuTabs.addEventListener('touchend', () => {
+      isDragging = false;
+  });
+  
+  menuTabs.addEventListener('touchmove', (e) => {
+      if(!isDragging) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - menuTabs.offsetLeft;
+      const walk = (x - startX) * 2;
+      menuTabs.scrollLeft = scrollLeft - walk;
+  });
+  
+  // Cambiar categorías del menú
+  document.querySelectorAll('.menu-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+          // Remover active de todos los tabs
+          document.querySelectorAll('.menu-tab').forEach(t => {
+              t.classList.remove('active');
+          });
+          
+          // Agregar active al tab clickeado
+          this.classList.add('active');
+          
+          const categoria = this.getAttribute('data-categoria');
+          
+          // Ocultar todas las categorías
+          document.querySelectorAll('.menu-category').forEach(cat => {
+              cat.classList.remove('active');
+          });
+          
+          // Mostrar la categoría seleccionada
+          document.getElementById(categoria).classList.add('active');
+      });
+  });
+  
+  // Smooth scrolling para anclas
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if(targetElement) {
+              window.scrollTo({
+                  top: targetElement.offsetTop - 70,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
+  
+  // Efecto de carga suave
+  const animateOnScroll = function() {
+      const elements = document.querySelectorAll('.section-title, .nosotros-content, .menu-item, .info-card');
+      
+      elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+          
+          if(elementPosition < screenPosition) {
+              element.style.opacity = '1';
+              element.style.transform = 'translateY(0)';
+          }
+      });
+  };
+  
+  // Configurar animaciones iniciales
+  function setupAnimations() {
+      const elements = document.querySelectorAll('.section-title, .nosotros-content, .menu-item, .info-card');
+      
+      elements.forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = 'all 0.6s ease';
+      });
   }
-}
+  
+  setupAnimations();
+  window.addEventListener('scroll', animateOnScroll);
+  
+  // Cargar animaciones al inicio
+  animateOnScroll();
+});
