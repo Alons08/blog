@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cerrar menú al hacer clic fuera
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
+        if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn') && navLinks.classList.contains('active')) {
             mobileBtn.classList.remove('active');
             navLinks.classList.remove('active');
             document.body.style.overflow = '';
