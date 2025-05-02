@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osito Sorpresa  Piery</title>
+    <title>Osito Sorpresa Piery</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 class="logo">Osito Sorpresa</h1>
+            <div class="logo-container">
+                <h1 class="logo">Osito<span>Sorpresa Piery</span></h1>
+                <div class="bear-icon">🧸</div>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#hero">Inicio</a></li>
@@ -18,29 +24,59 @@
                     <li><a href="#packages">Paquetes</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
         </div>
     </header>
 
     <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
         <div class="container">
-            <h2>¡Una Visita Inesperada con Mucho Amor!</h2>
-            <p>Deja que nuestro Osito Sorpresa lleve alegría, baile y un regalo especial a tus seres queridos</p>
-            <a href="#contact" class="btn">Reserva Ahora</a>
+            <div class="hero-content">
+                <h2>¡Sorprende con Amor!</h2>
+                <h3>Visita inesperada de nuestro Osito con regalo especial</h3>
+                <p>Celebra momentos especiales con una experiencia única llena de alegría, música y diversión</p>
+                <div class="hero-buttons">
+                    <a href="#packages" class="btn btn-primary">Ver Paquetes</a>
+                    <a href="#contact" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
-            <h2>Sobre Nosotros</h2>
+            <div class="section-header">
+                <h2 class="section-title">Sobre Nosotros</h2>
+                <div class="section-subtitle">Conoce nuestra magia</div>
+            </div>
+            
             <div class="about-content">
-                <div class="about-text">
-                    <p>Osito Sorpresa es un emprendimiento creado por Pierina Mercado con el propósito de llevar alegría y momentos inolvidables a través de visitas sorpresa.</p>
-                    <p>Nuestro osito llega inesperadamente con un regalo especial, música, baile y mucha diversión para celebrar ocasiones especiales o simplemente para demostrar amor.</p>
-                    <p>¡Hacemos que cada momento sea mágico y memorable!</p>
-                </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1589874186480-ecd085096d68?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Osito de peluche con regalo">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pierina Mercado - Osito Sorpresa">
+                    </div>
+                    <div class="about-badge">
+                        <div class="badge-content">
+                            <span class="badge-number">+100</span>
+                            <span class="badge-text">Sorpresas realizadas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Hola, soy Pierina Mercado</h3>
+                    <p>Creé Osito Sorpresa con el propósito de llevar alegría y crear momentos inolvidables. Nuestro osito llega cuando menos se lo esperan, con un regalo especial, música, baile y mucha diversión.</p>
+                    <p>Cada visita está diseñada para hacer sentir especial a esa persona importante en tu vida, ya sea para celebrar un cumpleaños, el día de la madre, un aniversario o simplemente para decir "te quiero".</p>
+                    <div class="signature">
+                        <img src="https://i.ibb.co/0jQ7Y3x/signature.png" alt="Firma Pierina Mercado">
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,73 +84,121 @@
 
     <section id="packages" class="packages">
         <div class="container">
-            <h2>Nuestros Paquetes</h2>
-            <p class="subtitle">Elige el paquete perfecto para tu ocasión especial</p>
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Paquetes</h2>
+                <div class="section-subtitle">Elige la sorpresa perfecta</div>
+            </div>
             
             <div class="package-cards">
                 <!-- Paquete 1 -->
                 <div class="card">
+                    <div class="card-corner"></div>
                     <div class="card-header">
-                        <h3>Pack 1</h3>
-                        <p class="price">S/65 SOLES</p>
+                        <h3>Pack Básico</h3>
+                        <div class="price">S/65<span>.00</span></div>
                     </div>
                     <div class="card-body">
                         <ul>
                             <li><i class="fas fa-check"></i> Visita de Osito o Osita</li>
                             <li><i class="fas fa-check"></i> 02 músicas a elección con baile</li>
                             <li><i class="fas fa-check"></i> 1 globo con paliglobo (feliz día mamá)</li>
-                            <li><i class="fas fa-check"></i> Cartel personalizado 4 fotos (una cartulina)</li>
+                            <li><i class="fas fa-check"></i> Cartel personalizado 4 fotos</li>
                             <li><i class="fas fa-check"></i> Una corona 👑</li>
-                            <li><i class="fas fa-check"></i> Fotos y video totalmente editados</li>
+                            <li><i class="fas fa-check"></i> Fotos y video editados</li>
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="#contact" class="btn">Reservar</a>
+                        <a href="https://wa.me/51TU_NUMERO_WHATSAPP?text=¡Hola!%20Quiero%20reservar%20el%20Pack%20Básico%20(S/65)%20por%20favor" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Reservar
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Paquete 2 -->
+                <!-- Paquete 2 (Destacado) -->
                 <div class="card featured">
+                    <div class="card-badge">Popular</div>
+                    <div class="card-corner"></div>
                     <div class="card-header">
-                        <h3>Pack 2</h3>
-                        <p class="price">S/75 SOLES</p>
+                        <h3>Pack Premium</h3>
+                        <div class="price">S/75<span>.00</span></div>
                     </div>
                     <div class="card-body">
                         <ul>
                             <li><i class="fas fa-check"></i> Visita de Osito o Osita</li>
                             <li><i class="fas fa-check"></i> 03 músicas a elección con baile</li>
-                            <li><i class="fas fa-check"></i> 01 globo metálico con paliglobo o ramito de 3 rosas 🌹</li>
+                            <li><i class="fas fa-check"></i> 01 globo metálico o ramito de 3 rosas 🌹</li>
                             <li><i class="fas fa-check"></i> Corona 👑</li>
-                            <li><i class="fas fa-check"></i> Cartel personalizado Gigante 5 fotos</li>
+                            <li><i class="fas fa-check"></i> Cartel gigante 5 fotos</li>
                             <li><i class="fas fa-check"></i> Fotos y video</li>
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="#contact" class="btn">Reservar</a>
+                        <a href="https://wa.me/51TU_NUMERO_WHATSAPP?text=¡Hola!%20Quiero%20reservar%20el%20Pack%20Premium%20(S/75)%20por%20favor" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Reservar
+                        </a>
                     </div>
                 </div>
                 
                 <!-- Paquete 3 -->
                 <div class="card">
+                    <div class="card-corner"></div>
                     <div class="card-header">
-                        <h3>Pack 3</h3>
-                        <p class="price">S/130 SOLES</p>
+                        <h3>Pack Deluxe</h3>
+                        <div class="price">S/130<span>.00</span></div>
                     </div>
                     <div class="card-body">
                         <ul>
                             <li><i class="fas fa-check"></i> Visita de Osito o Osita</li>
                             <li><i class="fas fa-check"></i> 03 músicas a elección con baile</li>
-                            <li><i class="fas fa-check"></i> 01 globo metálico con paliglobo o helio (feliz día mamá)</li>
+                            <li><i class="fas fa-check"></i> Globo metálico con paliglobo o helio</li>
                             <li><i class="fas fa-check"></i> Corona 👑</li>
-                            <li><i class="fas fa-check"></i> Cartel personalizado con 7 fotos</li>
-                            <li><i class="fas fa-check"></i> 01 detalle personalizado</li>
+                            <li><i class="fas fa-check"></i> Cartel con 7 fotos</li>
+                            <li><i class="fas fa-check"></i> Detalle personalizado</li>
                             <li><i class="fas fa-check"></i> Bombarda</li>
                             <li><i class="fas fa-check"></i> Fotos y video</li>
                             <li><i class="fas fa-times"></i> No incluye movilidad</li>
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="#contact" class="btn">Reservar</a>
+                        <a href="https://wa.me/51TU_NUMERO_WHATSAPP?text=¡Hola!%20Quiero%20reservar%20el%20Pack%20Deluxe%20(S/130)%20por%20favor" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Reservar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestras Sorpresas</h2>
+                <div class="section-subtitle">Momentos de felicidad</div>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1516589091380-5d60150f1225?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sorpresa 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sorpresa 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519608425082-4ae5130bfa3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sorpresa 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1527482797697-8795b05a13fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sorpresa 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
                     </div>
                 </div>
             </div>
@@ -123,10 +207,41 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contacto</h2>
-            <p>Reserva tu visita sorpresa o solicita más información</p>
+            <div class="section-header">
+                <h2 class="section-title">Contáctanos</h2>
+                <div class="section-subtitle">Reserva tu sorpresa</div>
+            </div>
             
             <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información de contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>
+                        <span>Pierina Mercado</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+51999999999">+51 999 999 999</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:contacto@ositosorpresa.com">contacto@ositosorpresa.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lima, Perú</span>
+                    </div>
+                    
+                    <div class="social-media">
+                        <h3>Síguenos</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/51TU_NUMERO_WHATSAPP" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
@@ -141,29 +256,16 @@
                         <div class="form-group">
                             <select id="package" name="package">
                                 <option value="">Selecciona un paquete</option>
-                                <option value="Pack 1">Pack 1 - S/65</option>
-                                <option value="Pack 2">Pack 2 - S/75</option>
-                                <option value="Pack 3">Pack 3 - S/130</option>
+                                <option value="Pack Básico">Pack Básico - S/65</option>
+                                <option value="Pack Premium">Pack Premium - S/75</option>
+                                <option value="Pack Deluxe">Pack Deluxe - S/130</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tu mensaje o detalles de la sorpresa" required></textarea>
+                            <textarea id="message" name="message" placeholder="Cuéntanos sobre tu sorpresa" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Enviar Mensaje</button>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                     </form>
-                </div>
-                
-                <div class="contact-info">
-                    <h3>Información de contacto</h3>
-                    <p><i class="fas fa-user"></i> Pierina Mercado</p>
-                    <p><i class="fas fa-phone"></i> +51 XXX XXX XXX</p>
-                    <p><i class="fas fa-envelope"></i> ositosorpresa@ejemplo.com</p>
-                    
-                    <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -171,10 +273,36 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Osito Sorpresa - Todos los derechos reservados</p>
-            <p>Creado por Pierina Mercado</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Osito<span>Sorpresa</span></h3>
+                    <p>Llevando alegría y momentos inolvidables</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#packages">Paquetes</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +51 999 999 999</p>
+                    <p><i class="fas fa-envelope"></i> contacto@ositosorpresa.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Osito Sorpresa - Todos los derechos reservados</p>
+                <p>Creado con ❤️ por Pierina Mercado</p>
+            </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/51TU_NUMERO_WHATSAPP" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="js/script.js"></script>
 </body>
