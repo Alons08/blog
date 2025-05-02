@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osito Sorpresa Piery - Visitas Inesperadas con Regalo</title>
+    <title>Osito Sorpresa Piery</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo-container">
                 <img src="logo.png" alt="Osito Sorpresa Piery" class="logo-img">
-                <h1 class="logo">Osito<span>Sorpresa</span> <span class="piery">Piery</span></h1>
+                <div class="logo-text">
+                    <span class="logo-main">Osito Sorpresa</span>
+                    <span class="logo-sub">Piery</span>
+                </div>
             </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#about">Sobre Nosotros</a></li>
                     <li><a href="#packages">Paquetes</a></li>
-                    <li><a href="#gallery">Nuestras Sorpresas</a></li>
+                    <li><a href="#gallery">Galería</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
                 <div class="mobile-menu-btn">
@@ -50,6 +53,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Sobre Nosotros</h2>
+                <p class="section-subtitle">Creando momentos mágicos</p>
             </div>
             
             <div class="about-content">
@@ -62,6 +66,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Nuestros Paquetes</h2>
+                <p class="section-subtitle">Elige la sorpresa perfecta</p>
             </div>
             
             <div class="package-cards">
@@ -90,6 +95,7 @@
                 
                 <!-- Paquete 2 -->
                 <div class="card featured">
+                    <div class="card-badge">Popular</div>
                     <div class="card-header">
                         <h3>Pack Premium</h3>
                         <div class="price">S/75<span>.00</span></div>
@@ -144,7 +150,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Nuestras Sorpresas</h2>
-                <p class="section-subtitle">Momentos de felicidad que hemos creado</p>
+                <p class="section-subtitle">Momentos de felicidad creados</p>
             </div>
             
             <div class="gallery-grid">
@@ -164,24 +170,44 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <div class="logo-contact">
-                    <img src="logo.png" alt="Osito Sorpresa Piery">
-                </div>
                 <h2 class="section-title">Contáctanos</h2>
+                <p class="section-subtitle">Reserva tu sorpresa hoy mismo</p>
             </div>
             
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+51999999999">+51 999 999 999</a>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        <h3>Teléfono</h3>
+                        <a href="tel:+51999999999">+51 999 999 999</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp contact-icon"></i>
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/51TU_NUMERO_WHATSAPP" target="_blank">Enviar mensaje</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <h3>Email</h3>
+                        <a href="mailto:contacto@ositosorpresa.com">contacto@ositosorpresa.com</a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <a href="https://wa.me/51TU_NUMERO_WHATSAPP" target="_blank">Envíanos un mensaje</a>
-                </div>
-                <div class="social-links">
-                    <a href="LINK_FACEBOOK" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    <a href="LINK_TIKTOK" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                
+                <div class="social-media">
+                    <h3>Síguenos en redes</h3>
+                    <div class="social-icons">
+                        <a href="LINK_FACEBOOK" target="_blank" class="social-icon facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="LINK_TIKTOK" target="_blank" class="social-icon tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="LINK_INSTAGRAM" target="_blank" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
