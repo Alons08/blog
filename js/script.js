@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileBtn.addEventListener('click', function() {
         navLinks.classList.toggle('active');
         this.classList.toggle('active');
+        
+        // Cambiar ícono de hamburguesa a X
+        if (navLinks.classList.contains('active')) {
+            this.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+            this.innerHTML = '<i class="fas fa-bars"></i>';
+        }
     });
     
     // Smooth scrolling for navigation links
@@ -25,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Close mobile menu
                 navLinks.classList.remove('active');
                 mobileBtn.classList.remove('active');
+                mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
     });
@@ -34,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
             navLinks.classList.remove('active');
             mobileBtn.classList.remove('active');
+            mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
 });
