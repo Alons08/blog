@@ -78,4 +78,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Ejecutar al cargar la página
+
+    // Lightbox para galería
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    
+    const lightboxImg = document.createElement('img');
+    lightboxImg.className = 'lightbox-img';
+    
+    const lightboxClose = document.createElement('span');
+    lightboxClose.className = 'lightbox-close';
+    lightboxClose.innerHTML = '&times;';
+    
+    lightbox.appendChild(lightboxImg);
+    lightbox.appendChild(lightboxClose);
+    document.body.appendChild(lightbox);
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.querySelector('img').src;
+            lightboxImg.src = imgSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Cerrar lightbox con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 });
