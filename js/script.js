@@ -10,6 +10,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeCart = document.getElementById('closeCart');
     const checkoutBtn = document.getElementById('checkoutBtn');
     
+    // Función para mostrar notificación de producto agregado
+    function showAddedNotification() {
+        const notification = document.createElement('div');
+        notification.className = 'added-notification';
+        notification.innerHTML = `
+            <i class="fas fa-check-circle"></i>
+            <span>Producto agregado</span>
+        `;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 3000);
+    }
+
     // Función para ajustar el hero section
     function adjustHero() {
         const navbar = document.querySelector('.navbar');
@@ -310,8 +332,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         menuItems = document.querySelectorAll('.menu-item');
         
-        // Agregar eventos a los botones de cantidad y agregar al carrito
+        // Configurar botones de cantidad
         setupQuantityButtons();
+        
+        // Configurar botones de agregar al carrito
         setupAddToCartButtons();
     }
     
@@ -358,6 +382,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 const quantity = parseInt(document.querySelector(`.quantity-input[data-id="${id}"]`).value);
                 
                 addToCart(item, quantity);
+                
+                // Cambiar estilo del botón
+                this.classList.add('added');
+                this.textContent = '✓ Agregado';
+                
+                // Mostrar notificación
+                showAddedNotification();
+                
+                // Restaurar el botón después de 2 segundos
+                setTimeout(() => {
+                    this.classList.remove('added');
+                    this.textContent = 'Agregar';
+                }, 2000);
             });
         });
     }
@@ -378,7 +415,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         updateCart();
-        showCart();
     }
     
     function updateCartItemQuantity(index, newQuantity) {
