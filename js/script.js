@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Variables del carrito
+    let cart = [];
+    const cartContainer = document.getElementById('cartContainer');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const cartCount = document.getElementById('cartCount');
+    const cartFloat = document.getElementById('cartFloat');
+    const closeCart = document.getElementById('closeCart');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    
     // Función para ajustar el hero section
     function adjustHero() {
         const navbar = document.querySelector('.navbar');
@@ -60,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuData = [
         // Platos principales
         {
+            id: 1,
             name: "Pollo Broaster",
             description: "Crocante pollo broaster acompañado de papas fritas y ensalada fresca",
             price: 11.00,
@@ -68,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 2,
             name: "Mostrito",
             description: "Delicioso mostrito con carne, papas y salsa especial de la casa",
             price: 13.00,
@@ -76,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 3,
             name: "Lomito de Carne",
             description: "Jugoso lomito de res a la parrilla con guarnición al gusto",
             price: 14.00,
@@ -84,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 4,
             name: "Lomito de Pollo",
             description: "Tierno lomito de pollo grillado con acompañamiento",
             price: 13.00,
@@ -92,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 5,
             name: "Chaufa",
             description: "Arroz chaufa tradicional preparado con ingredientes frescos",
             price: 14.00,
@@ -100,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 6,
             name: "Pollo a la Plancha",
             description: "Pechuga de pollo a la plancha con vegetales salteados",
             price: 13.00,
@@ -108,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 7,
             name: "Tallarín Criollo",
             description: "Tallarines al estilo peruano con salsa criolla y carne",
             price: 14.00,
@@ -116,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 8,
             name: "Caldo de Gallina",
             description: "Reconfortante caldo preparado con gallina de corral",
             price: 10.00,
@@ -126,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Hamburguesas
         {
+            id: 9,
             name: "Hamburguesa Simple",
             description: "Clásica hamburguesa con carne, lechuga, tomate y salsa",
             price: 5.00,
@@ -134,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 10,
             name: "Hamburguesa Royal",
             description: "Doble carne con queso, tocino y salsa especial",
             price: 6.00,
@@ -142,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 11,
             name: "Hamburguesa Completa",
             description: "Incluye carne, jamón, queso, huevo y todos los aderezos",
             price: 8.00,
@@ -150,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 12,
             name: "Hamburguesa Filete de Pollo",
             description: "Filete de pollo empanizado con vegetales frescos",
             price: 8.00,
@@ -158,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 13,
             name: "Salchicono",
             description: "Especial salchipapa con salchichas premium y toppings",
             price: 8.00,
@@ -168,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Postres
         {
+            id: 14,
             name: "Ensalada de Frutas",
             description: "Mezcla de frutas frescas de temporada",
             price: 8.00,
@@ -176,6 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 15,
             name: "Copa de Helado",
             description: "Deliciosa copa con tres sabores de helado a elección",
             price: 5.00,
@@ -184,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 16,
             name: "Waffles",
             description: "Crujientes waffles con toppings de tu preferencia",
             price: 9.00,
@@ -194,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Bebidas
         {
+            id: 17,
             name: "Jugo Surtido",
             description: "Refrescante mezcla de frutas de temporada",
             price: 3.00,
@@ -202,6 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 18,
             name: "Jugo de Papaya",
             description: "Natural jugo de papaya rico en fibra",
             price: 5.00,
@@ -210,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 19,
             name: "Jugo de Piña",
             description: "Jugo natural de piña refrescante",
             price: 5.00,
@@ -218,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 20,
             name: "Café",
             description: "Café pasado o espresso al gusto",
             price: 3.00,
@@ -226,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
             available: true
         },
         {
+            id: 21,
             name: "Infusión",
             description: "Variedad de infusiones herbales",
             price: 2.00,
@@ -260,6 +292,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
                     <span class="price">S/${item.price.toFixed(2)}</span>
+                    <div class="item-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1" data-id="${item.id}">
+                            <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-id="${item.id}" ${!item.available ? 'disabled' : ''}>
+                            ${item.available ? 'Agregar' : 'Agotado'}
+                        </button>
+                    </div>
                 </div>
             `;
             
@@ -267,7 +309,208 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         menuItems = document.querySelectorAll('.menu-item');
+        
+        // Agregar eventos a los botones de cantidad y agregar al carrito
+        setupQuantityButtons();
+        setupAddToCartButtons();
     }
+    
+    // Configurar botones de cantidad
+    function setupQuantityButtons() {
+        // Botones de incremento
+        document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = parseInt(this.getAttribute('data-id'));
+                const input = document.querySelector(`.quantity-input[data-id="${id}"]`);
+                input.value = parseInt(input.value) + 1;
+            });
+        });
+        
+        // Botones de decremento
+        document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = parseInt(this.getAttribute('data-id'));
+                const input = document.querySelector(`.quantity-input[data-id="${id}"]`);
+                if (parseInt(input.value) > 1) {
+                    input.value = parseInt(input.value) - 1;
+                }
+            });
+        });
+        
+        // Validar inputs manuales
+        document.querySelectorAll('.quantity-input').forEach(input => {
+            input.addEventListener('change', function() {
+                if (parseInt(this.value) < 1 || isNaN(parseInt(this.value))) {
+                    this.value = 1;
+                }
+            });
+        });
+    }
+    
+    // Configurar botones de agregar al carrito
+    function setupAddToCartButtons() {
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.disabled) return;
+                
+                const id = parseInt(this.getAttribute('data-id'));
+                const item = menuData.find(item => item.id === id);
+                const quantity = parseInt(document.querySelector(`.quantity-input[data-id="${id}"]`).value);
+                
+                addToCart(item, quantity);
+            });
+        });
+    }
+    
+    // Funciones del carrito
+    function addToCart(item, quantity) {
+        const existingItem = cart.find(cartItem => cartItem.id === item.id);
+        
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            cart.push({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                quantity: quantity
+            });
+        }
+        
+        updateCart();
+        showCart();
+    }
+    
+    function updateCartItemQuantity(index, newQuantity) {
+        if (newQuantity < 1) {
+            removeFromCart(index);
+            return;
+        }
+        
+        cart[index].quantity = newQuantity;
+        updateCart();
+    }
+    
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+        
+        if (cart.length === 0) {
+            hideCart();
+        }
+    }
+    
+    function updateCart() {
+        cartItems.innerHTML = '';
+        let total = 0;
+        let totalItems = 0;
+        
+        cart.forEach((item, index) => {
+            total += item.price * item.quantity;
+            totalItems += item.quantity;
+            
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">S/${item.price.toFixed(2)} c/u</div>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="cart-item-quantity">
+                        <button class="cart-quantity-btn minus" data-index="${index}">-</button>
+                        <input type="number" class="cart-quantity-input" value="${item.quantity}" min="1" data-index="${index}">
+                        <button class="cart-quantity-btn plus" data-index="${index}">+</button>
+                    </div>
+                    <button class="cart-item-remove" data-index="${index}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `;
+            
+            cartItems.appendChild(cartItem);
+        });
+        
+        // Configurar eventos para los elementos del carrito
+        document.querySelectorAll('.cart-quantity-btn.minus').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                const input = document.querySelector(`.cart-quantity-input[data-index="${index}"]`);
+                updateCartItemQuantity(index, parseInt(input.value) - 1);
+            });
+        });
+        
+        document.querySelectorAll('.cart-quantity-btn.plus').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                const input = document.querySelector(`.cart-quantity-input[data-index="${index}"]`);
+                updateCartItemQuantity(index, parseInt(input.value) + 1);
+            });
+        });
+        
+        document.querySelectorAll('.cart-quantity-input').forEach(input => {
+            input.addEventListener('change', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                updateCartItemQuantity(index, parseInt(this.value));
+            });
+        });
+        
+        document.querySelectorAll('.cart-item-remove').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                removeFromCart(index);
+            });
+        });
+        
+        cartTotal.textContent = `S/${total.toFixed(2)}`;
+        cartCount.textContent = totalItems;
+        
+        // Mostrar u ocultar el carrito flotante según si hay items
+        if (cart.length > 0) {
+            cartFloat.style.display = 'flex';
+        } else {
+            cartFloat.style.display = 'none';
+        }
+    }
+    
+    function showCart() {
+        cartContainer.classList.add('active');
+        cartOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function hideCart() {
+        cartContainer.classList.remove('active');
+        cartOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Eventos del carrito
+    cartFloat.addEventListener('click', showCart);
+    closeCart.addEventListener('click', hideCart);
+    cartOverlay.addEventListener('click', hideCart);
+    
+    // Generar WhatsApp message
+    checkoutBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (cart.length === 0) return;
+        
+        let message = '¡Hola! Quiero realizar el siguiente pedido:\n\n';
+        
+        cart.forEach(item => {
+            message += `- ${item.name} (x${item.quantity}): S/${(item.price * item.quantity).toFixed(2)}\n`;
+        });
+        
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        message += `\n*Total: S/${total.toFixed(2)}*`;
+        message += '\n\nPor favor, confirmen mi pedido. ¡Gracias!';
+        
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/51959984751?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+    });
     
     // Generar ítems iniciales
     generateMenuItems();
