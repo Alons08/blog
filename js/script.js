@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         name: "Pollo Broaster",
         description:
           "Crocante pollo broaster acompañado de papas fritas y ensalada fresca",
-        price: 11.0,
+        price: 12.0,
         category: "platos-principales",
         image: "images/pollo-broaster.jpg",
         available: true,
