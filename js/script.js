@@ -615,7 +615,7 @@ document.addEventListener("DOMContentLoaded", function () {
       message += "\n\nPor favor, confirmen mi pedido. ¡Gracias!";
   
       const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/51959984751?text=${encodedMessage}`;
+      const whatsappUrl = `https://wa.me/51931088900?text=${encodedMessage}`;
   
       window.open(whatsappUrl, "_blank");
     });

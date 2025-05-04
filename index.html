@@ -1,150 +1,193 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NOMBRE-EMPRESA</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <span class="restaurant-name">NOMBRE-EMPRESA</span>
-            </a>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#menu">Carta</a></li>
-                <li><a href="#reserva">Reserva</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <a href="#" class="logo">
+          <span class="restaurant-name">NOMBRE-EMPRESA</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#menu">Carta</a></li>
+          <li><a href="#reserva">Reserva</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>Sabores que inspiran</h1>
-            <p>Descubre la auténtica cocina con nuestro toque especial</p>
-            <div class="hero-buttons">
-                <a href="#menu" class="btn">Ver nuestra carta</a>
-                <a href="#reserva" class="btn btn-outline">Reserva tu mesa</a>
-            </div>
+      <div class="hero-content">
+        <h1>Sabores que inspiran</h1>
+        <p>Descubre la auténtica cocina con nuestro toque especial</p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn">Ver nuestra carta</a>
+          <a href="#reserva" class="btn btn-outline">Reserva tu mesa</a>
         </div>
+      </div>
     </section>
 
     <!-- Nosotros Section -->
     <section class="section nosotros" id="nosotros">
-        <div class="container">
-            <h2 class="section-title">Nuestra Historia</h2>
-            <div class="nosotros-content">
-                <div class="nosotros-text">
-                    <p>Desde 2008, hemos estado sirviendo platos tradicionales con un toque moderno. Nuestro fundador, Chef Carlos, comenzó este sueño con una pequeña cocina y hoy somos un referente gastronómico en la ciudad.</p>
-                    <p>Nos enorgullece usar ingredientes frescos y de calidad, preparados con técnicas tradicionales que resaltan los sabores auténticos de nuestra región.</p>
-                </div>
-                <div class="nosotros-image">
-                    <img src="images/equipo.jpg" alt="Nuestro equipo" loading="lazy">
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Nuestra Historia</h2>
+        <div class="nosotros-content">
+          <div class="nosotros-text">
+            <p>
+              Desde 2008, hemos estado sirviendo platos tradicionales con un
+              toque moderno. Nuestro fundador, Chef Carlos, comenzó este sueño
+              con una pequeña cocina y hoy somos un referente gastronómico en la
+              ciudad.
+            </p>
+            <p>
+              Nos enorgullece usar ingredientes frescos y de calidad, preparados
+              con técnicas tradicionales que resaltan los sabores auténticos de
+              nuestra región.
+            </p>
+          </div>
+          <div class="nosotros-image">
+            <img src="images/equipo.jpg" alt="Nuestro equipo" loading="lazy" />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Menú Section -->
     <section class="section menu" id="menu">
-        <div class="container">
-            <h2 class="section-title">Nuestra Carta</h2>
-            <div class="menu-filters">
-                <button class="filter-btn active" data-filter="platos-principales">Principales</button>
-                <button class="filter-btn" data-filter="postres">Postres</button>
-                <button class="filter-btn" data-filter="bebidas">Bebidas</button>
-                <button class="filter-btn" data-filter="hamburguesas">Hamburguesas</button>
-            </div>
-            <div class="menu-items">
-                <!-- Los ítems del menú se generarán con JavaScript -->
-            </div>
+      <div class="container">
+        <h2 class="section-title">Nuestra Carta</h2>
+        <div class="menu-filters">
+          <button class="filter-btn active" data-filter="platos-principales">
+            Principales
+          </button>
+          <button class="filter-btn" data-filter="postres">Postres</button>
+          <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+          <button class="filter-btn" data-filter="hamburguesas">
+            Hamburguesas
+          </button>
         </div>
+        <div class="menu-items">
+          <!-- Los ítems del menú se generarán con JavaScript -->
+        </div>
+      </div>
     </section>
 
     <!-- Reserva Section -->
     <section class="section reserva" id="reserva">
-        <div class="container">
-            <h2 class="section-title">Reserva tu Mesa</h2>
-            <div class="reserva-content">
-                <div class="reserva-info">
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="https://wa.me/51959984751" target="_blank">+51 959 984 751</a>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Lunes a Viernes: 5pm - 10pm<br>Sábado y Domingo: 5am - 11pm</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Av. Piura Max F1 Lt 19, Cambio Puente</p>
-                    </div>
-                </div>
-                <div class="reserva-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2033.4245279634192!2d-78.55436629960474!3d-8.99850647746461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ac79967525075d%3A0x8c1067969ad1d5fd!2sD&#39;pasadita%20Restaurant!5e0!3m2!1ses-419!2spe!4v1746041404402!5m2!1ses-419!2spe" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Reserva tu Mesa</h2>
+        <div class="reserva-content">
+          <div class="reserva-info">
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <a href="https://wa.me/931088900" target="_blank"
+                >+51 931 088 900</a
+              >
             </div>
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <p>
+                Lunes a Viernes: 5pm - 10pm<br />Sábado y Domingo: 5am - 11pm
+              </p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Av. Piura Max F1 Lt 19, Cambio Puente</p>
+            </div>
+          </div>
+          <div class="reserva-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d954.6250556263096!2d-78.55559395106744!3d-8.997556915341049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ac78b1ac515c3b%3A0xdbf56c260bbf2631!2sPolleria%20El%20Dorado!5e0!3m2!1ses-419!2spe!4v1746388837606!5m2!1ses-419!2spe"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="restaurant-name">NOMBRE-EMPRESA</span>
-                </div>
-                <div class="footer-social">
-                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Restaurante NOMBRE-EMPRESA. Todos los derechos reservados.</p>
-                <div class="developer-credit-box">
-                    <p>Creado por <a href="https://alonsoleandro.me/" target="_blank" class="developer-link">Alonso Leandro</a></p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="restaurant-name">NOMBRE-EMPRESA</span>
+          </div>
+          <div class="footer-social">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Restaurante NOMBRE-EMPRESA. Todos los derechos
+            reservados.
+          </p>
+          <div class="developer-credit-box">
+            <p>
+              Creado por
+              <a
+                href="https://alonsoleandro.me/"
+                target="_blank"
+                class="developer-link"
+                >Alonso Leandro</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Carrito de Compras -->
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-container" id="cartContainer">
-        <div class="cart-header">
-            <h3>Tu Pedido</h3>
-            <button class="close-cart" id="closeCart">&times;</button>
+      <div class="cart-header">
+        <h3>Tu Pedido</h3>
+        <button class="close-cart" id="closeCart">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Los items del carrito se agregarán aquí dinámicamente -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">S/0.00</span>
         </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Los items del carrito se agregarán aquí dinámicamente -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">S/0.00</span>
-            </div>
-            <a href="#" class="btn" id="checkoutBtn">Realizar Pedido</a>
-        </div>
+        <a href="#" class="btn" id="checkoutBtn">Realizar Pedido</a>
+      </div>
     </div>
 
     <!-- Botón flotante del carrito -->
     <div class="cart-float" id="cartFloat">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count" id="cartCount">0</span>
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count" id="cartCount">0</span>
     </div>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
