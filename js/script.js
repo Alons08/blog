@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
         price: 9.0,
         category: "postres",
         image: "images/waffles.jpg",
-        available: false,
+        available: true,
       },
   
       // Bebidas
